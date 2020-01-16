@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .container {
+      display: flex;
+      /* flex 정렬 옵션 (가로 or 세로 출력)
+      flex-direction:  row column column-reverse row-reverse */
+
+      /* flex width 사이즈별 배치 변경 [ wrap-reverse ]*/
+      flex-wrap: wrap;
+
+      /* 축 수평 기준 정렬 꼬챙이로 기억 [flex-start center flex-end space-around space-between]*/
+      /* justify-content: space-around; */
+
+      /* 축 수직 기준 정렬 꼬챙이로 기억 [stretch flex-start center flex-end ]*/
+      /* align-items: center; */
+
+      /* flex-wrap: wrap 일경우에 사용가능 (align-items 해당태그 높이안맞춰줌)*/
+      /* align-content: space-around; */
+
+      height: 100vh;
+      background: lightgray;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .item {
+      /* flex 남은공간 채우기(신축성) */
+      /* flex-grow: 1; */
+      flex-basis: 0;
+      background: rgba(255, 0, 0.5);
+    }
+
+    /* :nth-child() => 해당클래스 자식 순번에 따른 style 설정가능 */
+    .item:nth-child(1) {
+      /* 남은 여백을 비율대로 나눠가짐
+       * 여기서 flex-basis: 0 으로 할경우 해당 공간을 비율대로 맞출수있음(기본값auto로 되어있음)
+       */
+      /* flex-grow: 1; */
+
+      /* 화면이 줄어들때 남은영역을 나눠가짐
+       * 여기서 flex-basis: 0 으로 할경우 해당 공간을 비율대로 맞출수있음(기본값auto로 되어있음)
+       */
+      /* flex-shrink: 1; */
+
+      /* 위에 2개를 합친게 flex로 사용가능(flex사용시 flex-basis가 0 으로 셋팅됨;) 
+       * flex 사용시 신축성이 생김
+       */
+      flex: 1;
+
+      /* 개별 정렬 [flex-start center flex-end]*/
+      /* align-self: flex-start; */
+
+      /* flex 순서 변경 */
+      order: 2;
+    }
+    .item:nth-child(2) {
+      /* flex-grow: 2; */
+      /* flex-shrink: 2; */
+      flex: 2;
+      /* align-self: center; */
+
+      order: 3;
+    }
+    .item:nth-child(3) {
+      /* flex-grow: 1; */
+      /* flex-shrink: 1; */
+      flex: 1;
+      /* align-self: flex-end; */
+
+      order: 1;
+    }
+
+    .item:nth-child(odd) {
+      background: rgba(255, 255, 0.5);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item">
+        <img
+          style="width: 300px"
+          src="https://i.ytimg.com/vi/RxgvoTbgI2g/maxresdefault.jpg"
+        />
+        <p>AAAAA</p>
+        <p>AAAAA</p>
+        <p>AAAAA</p>
+      </div>
+      <div class="item">
+        <img
+          style="width: 300px"
+          src="https://pds.joins.com/news/component/gamemeca/201703/16/20170316184211.jpg"
+          alt=""
+        />
+        <p>BBB</p>
+      </div>
+
+      <div class="item">
+        <img
+          style="width: 300px"
+          src="https://i.ytimg.com/vi/hbI1BPgXTQI/maxresdefault.jpg"
+          alt=""
+        />
+        <p>CCC</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+</style>
