@@ -9,6 +9,36 @@
   <link rel="stylesheet" href="./style/css-reset.css" />
   <style>
     .container {
+      display: grid;
+
+      /* grid 비율
+       * [40% 60%] => 비율을 4:6으로 변경
+       * [4fr 6fr] => (많이사용) %와 비슷하지만, gap을 사용했을경우 내부에만 갭 생성(%는 외부에도 적용됨)
+       * [200px 1fr] => 한쪽 크기 고정
+       * [repeat(3, 1fr)] => 반복 [1fr 1fr 1fr] 와 동일
+       */
+      grid-template-columns: 1fr 1fr 1fr;
+
+      /* 그리드 사이 공간 */
+      grid-gap: 1rem;
+
+      /* 정렬(가로축)
+      [start center end] */
+      /* justify-items: start; */
+
+      /* 정렬(세로축)
+       * [start center end]
+      */
+      /* align-items: center; */
+
+      /* row 크기
+       * [300px] => 내부 그리드 row 크기 고정 (내용 길이가 길경우 벗어남)
+       * [minmax(300px, auto)] => row 중 벗어난다면 그 길이만큼 추가
+       * [minmax(10em, auto)] => 폰트 크기만큼 늘려줌
+       * ??? 작동잘안됨 26:42 https://www.youtube.com/watch?v=eprXmC_j9A4
+       */
+      /* grid-auto-rows: minmax(20em, auto); */
+
       height: 100vh;
       background: lightgray;
       max-width: 1060px;
@@ -18,8 +48,46 @@
       background: rgba(255, 0, 0.5);
     }
 
+    /* 홀수색 변경 */
     .item:nth-child(odd) {
       background: rgba(255, 255, 0.5);
+    }
+
+    .item:nth-child(1) {
+      /* grid 가로 컬럼 합칠때 사용
+       * [1/4] => ㅣㅁㅣㅁㅣㅁㅣ - ㅣ로 따져서 1번째부터 4번째까지 차지하겠다라는 의미
+       */
+      grid-column: 1/4;
+    }
+
+    .item:nth-child(4) {
+      /* grid 컬럼 합칠때 사용
+       * [1/4] => ㅣㅁㅣㅁㅣㅁㅣ - ㅣ로 따져서 1번째부터 4번째까지 차지하겠다라는 의미
+       */
+      /* grid-column: 1/4; */
+
+      /* grid 세로 컬럼 합칠때 사용
+       * [2/4] => 위의 grid-column과 동일한 규칙으로 세로로 정의
+       * 오른쪽 로우를 합치고 싶으면 grid-column 으로 시작위치를 정해줘야함(아니면 좌측으로 이동됨)
+       */
+      grid-row: 2/4;
+      grid-column: 3;
+    }
+
+    .item:nth-child(5) {
+      /* 5번째 엘리먼트만 가로축 start 로 변경 */
+      justify-self: start;
+
+      /* 5번째 엘리먼트만 세로축 start 로 변경 */
+      align-self: center;
+    }
+
+    .item:nth-child(9) {
+      /* grid 영역 겹치게 사용가능
+       * 위에 4번째 차일드에서 row합쳣는데 같은공간을 지정하면 합쳐진다
+       */
+      grid-row: 3/5;
+      grid-column: 3;
     }
   </style>
 
@@ -30,6 +98,17 @@
           style="width: 300px"
           src="https://i.ytimg.com/vi/RxgvoTbgI2g/maxresdefault.jpg"
         />
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
       </div>
       <div class="item">
         <img
@@ -37,6 +116,13 @@
           src="https://pds.joins.com/news/component/gamemeca/201703/16/20170316184211.jpg"
           alt=""
         />
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries,
+        </p>
       </div>
       <div class="item">
         <img
@@ -44,6 +130,12 @@
           src="https://i.ytimg.com/vi/hbI1BPgXTQI/maxresdefault.jpg"
           alt=""
         />
+        <p>
+          It was popularised in the 1960s with the release of Letraset sheets
+          containing Lorem Ipsum passages, and more recently with desktop
+          publishing software like Aldus PageMaker including versions of Lorem
+          Ipsum.
+        </p>
       </div>
 
       <div class="item">
@@ -59,6 +151,17 @@
           src="https://t1.daumcdn.net/cfile/tistory/9945844A5C39607B19"
           alt=""
         />
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
       </div>
       <div class="item">
         <img
