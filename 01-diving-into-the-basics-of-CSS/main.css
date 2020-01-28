@@ -1,0 +1,185 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#product-overview {
+  background: #ff1b68;
+  width: 100%;
+  height: 528px;
+  padding: 10px;
+}
+
+#product-overview h1 {
+  /* h1 { */
+  color: white;
+  /* 크롬 설정 - 글꼴 맞춤설정에서 확인 */
+  /* font-family: Serif; */
+
+  /* 구글에 Google fonts 검색 후 
+   * https://fonts.google.com/ 에서 원하는 폰트 사용
+   */
+  font-family: "Anton", sans-serif;
+}
+
+.section-title {
+  color: #2ddf5c;
+  /* inherit: root 속성 */
+  /* font-family: inherit; */
+}
+
+.main-header {
+  width: 100%;
+  background: #2ddf5c;
+  padding: 8px 16px;
+}
+
+.main-header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-header__brand {
+  color: #0e4f1f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.main-nav {
+  display: inline-block;
+  text-align: right;
+  /* calc: 계산한결과를 속성값으로 사용( +, -, *, / ) */
+  width: calc(100% - 74px);
+  vertical-align: middle;
+}
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-nav__item {
+  display: inline-block;
+  margin: 0 16px;
+}
+.main-nav__item a {
+  text-decoration: none;
+  color: #0e4f1f;
+}
+
+/* Pseudo Classes & Pseudo Elements
+ * pseude
+ 1. class (:class name) Defines the style of a .special state. of an element
+ 2. Element(::element name) Defines the style of a .specific part. of an element
+ * 아래 링크에서 목록 확인
+ Pseudo Classes: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+ Pseudo Elements: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+*/
+.main-nav__item a:hover {
+  color: white;
+}
+.main-nav__item a:active {
+  color: white;
+}
+/* Pseudo Elements 예시1) p태그 첫글자만 변경 */
+/* p::first-letter { color: red; font-size: 20px; } */
+/* Pseudo Elements 예시2) a태그 뒤에 글자 추가 */
+/* .main-nav__item a::after { content: " (Link)"; color: red; } */
+
+/*
+ 속성
+ * id 속성
+  # main { color: red }
+    => <h1 id="main">Main</h1>
+
+ * class 속성
+  .main { color: red; }
+    => <h1 class="main">Main</h1>
+
+ * element 속성
+  section
+    <section>Section</sections>
+
+ * attribute 속성
+  [disabled] { color: red; }
+    => <button disabled>Click</button>
+ */
+
+/* 
+ * 속성순서
+  Cascading 
+  Multiple rules can apply to the same Element
+
+  Specificity
+  Resolve conflicts arising from multiple Rules
+    Inline Styles
+    > #ID selectors 
+    > .class, :pseudo-class and [attribute] selectors
+    > <Tag> and ::pseudo-element selectors
+
+ * 동일속성시 아래 속성적용
+  h1 { font-family: "Anton", sans-serif; } 
+  h1 { font-family: Serif; } 
+  => 아래 css 적용
+*/
+
+/* 
+ * Understanding Combinators
+  Adjacent Sibling = 해당태그와 딱붙어있는 태그
+  div + p { color: red}
+    => <div>
+        <h2></h2>
+        <p>적용</p>
+        <p>미적용</p>
+      </div>
+
+  General Sibling = 해당태그와 동레벨 태그 모두
+  div ~ p { color: red }
+    => <div>
+        <h2></h2>
+        <p>적용</p>
+        <h3></h3>
+        <p>적용</p>
+      </div>
+
+  Child
+  div > p { color: red } = 해당태그 하위 1레벨만 적용
+    => <div>
+        <h2></h2>
+        <p>적용</p>
+        <div>
+          <p>미적용</p>
+        </div>
+        <p>적용</p>
+      </div>
+
+  Descendant = 해당태그 하위 모두 적용
+  div p { color: red }
+    => <div>
+        <h2></h2>
+        <p>적용</p>
+        <div>
+          <p>적용</p>
+        </div>
+        <p>적용</p>
+      </div>
+*/
+
+/* 기본 용어 (Selectors, Properties, values)
+ 아래 값들은 https://developer.mozilla.org/ko/docs/Web/CSS/Reference 여기서 확인가능 (원본 https://devdocs.io/css/)
+ * Selectors
+  div .blog-post #main-title [disabled] *
+ * Properties
+  backgroud-color width color margin display
+ * Values
+  red 30% #fa923f 10px block
+
+  => Value Types
+    Pre-defined Options
+      display: block; overflow: auto;
+    Colors
+      background: red; color: #fa923f; color: #ccc;
+    Length, Sizes & Numbers
+      height: 100px; width: 20%; order: 1;
+    Functions
+      background: url(...); transform: scale(...);
+ */
