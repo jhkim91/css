@@ -70,9 +70,10 @@ body {
  * pseude
  1. class (:class name) Defines the style of a .special state. of an element
  2. Element(::element name) Defines the style of a .specific part. of an element
- * 아래 링크에서 목록 확인
+ * 아래 링크에서 목록 확인 (Browser compatibility 브라우저 지원 확인)
  Pseudo Classes: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
  Pseudo Elements: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+ * css 브라우저 지원 체크 사이트: https://caniuse.com/
 */
 .main-nav__item a:hover {
   color: white;
