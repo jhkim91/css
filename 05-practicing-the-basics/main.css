@@ -94,6 +94,50 @@ body {
   outline: none;
 }
 
+#key-features {
+  background: #ff1b68;
+  margin-top: 80px;
+  padding: 16px;
+}
+
+#key-features .section-title {
+  color: white;
+  margin: 32px;
+}
+
+.key-feature__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.key-feature {
+  /* display 속성
+  * inline: 내용만큼의 공간할당됨(여러개사용시 붙음, text로 인식되는거같음)
+  * block: 내용만큼의 공간할당됨(여러개사용시 줄바꿈됨)
+  * inline-block: float 속성을 적용한것처럼 옆으로 늘어져 나옴
+  */
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+
+.key-feature__image {
+  background: #ffcede;
+  width: 128px;
+  height: 128px;
+  border: 2px solid #424242;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.key-feature__description {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 24px;
+}
 /* h1 {
     font-family: sans-serif;
 } */
@@ -159,4 +203,31 @@ body {
   color: #ff1b68;
   background: white;
   border: none;
+}
+
+.main-footer {
+  background: black;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.main-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.main-footer__link {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-footer__link a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer a:hover,
+.main-footer a:active {
+  color: #ccc;
 }
