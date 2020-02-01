@@ -66,6 +66,10 @@ body {
   top: 230px;
   left: 260px;
   position: fixed;
+  /* z-index가 높아도 위의 contact-us 보다 아래있는이유는
+  image-2를 감싸는 headline가 contact-us보다 z-index가 아래있기때문이다.
+  z-index는 동일레벨상에서 비교
+  */
   z-index: 10000;
 }
 
