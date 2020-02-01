@@ -22,6 +22,8 @@ body {
   padding: 20px;
   border: 5px solid black;
   margin: 0;
+  /* hidden 사용시 감싸지는 내용물이 벗어날때 안보이게한다. 예를들면 position 으로 top left 등으로 위치변경때 사용*/
+  overflow: hidden;
 }
 
 .parent div {
@@ -33,9 +35,15 @@ body {
 }
 
 .parent .child-1 {
-  position: fixed;
+  /* fixed 스크롤해도 고정 되어있음(기존공간할당 안됨) */
+  /* position: fixed;
   top: 0;
   left: 0;
   margin: 0;
-  width: 100%;
+  width: 100%; */
+
+  /* relative 감싸고있는 박스 기준으로 움직이며 기존공간 할당되어 위치 변경시 기존 공간은 남아있음 */
+  position: relative;
+  top: 180px;
+  left: 50px;
 }
