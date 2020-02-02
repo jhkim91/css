@@ -3,7 +3,10 @@ main {
 }
 
 .background {
-  background: url("../images/plans-background.jpg");
+  /* center/cover: 정렬/화면에 맞게 확대 */
+  background: url("../images/plans-background.jpg") center/cover;
+  /* filter: 색입히기 */
+  filter: grayscale(40%);
   width: 100%;
   height: 100%;
   position: fixed;
