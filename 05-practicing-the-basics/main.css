@@ -29,7 +29,7 @@
     initial : 기본값으로 설정합니다.
     inherit : 부모 요소의 속성값을 상속받습니다.
   */
-  background-attachment: scroll;
+  /* background-attachment: scroll; */
 
   /* 이미지 그라데이션 linear-gradient (이미지는 여러개 넣어도 허용, 색상 뒤 크기를 지정하면 그만큼 허용됨)
   각 조정: linear-gradient(to left top, red 70%, blue, green, rgba(0, 0, 0, 0.5));
@@ -45,12 +45,10 @@
   */
   /* background-image: radial-gradient(circle 20px at 20% 50%, red, blue, green); */
   /* background-image: radial-gradient( ellipse farthest-corner at 20% 50%, red, blue 70%, green ); */
-
   width: 100%;
   height: 528px;
-  padding: 10px;
+  margin-top: 2.75rem;
   /* border: 5px dashed red; */
-  margin-top: 43px;
   position: relative;
 }
 
@@ -76,8 +74,9 @@
 .plan {
   background: #d5ffdc;
   text-align: center;
-  padding: 16px;
-  margin: 8px;
+  /* rem: root 사이즈기준, em 을 사용안하는이유는 브라우저 설정에서 글꼴크기를 변경시 영향을 받기 때문(예: em지정 후 크롬에서 command + , 을 누르고 글골ㄱ크기 변경시 변경됨) */
+  padding: 1rem;
+  margin: 0.5rem;
   display: inline-block;
   width: 30%;
   vertical-align: middle;
@@ -92,7 +91,7 @@
 .plan__annotation {
   background: white;
   color: #19b84c;
-  padding: 8px;
+  padding: 0.5rem;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
 }
@@ -120,18 +119,18 @@
 }
 
 .plan__feature {
-  margin: 8px 0;
+  margin: 0.5rem 0;
 }
 
 #key-features {
   background: #ff1b68;
-  margin-top: 80px;
-  padding: 16px;
+  margin-top: 5rem;
+  padding: 1rem;
 }
 
 #key-features .section-title {
   color: white;
-  margin: 32px;
+  margin: 2rem;
 }
 
 .key-feature__list {
@@ -159,14 +158,14 @@
   border: 2px solid #424242;
   border-radius: 50%;
   margin: auto;
-  padding: 20px;
+  padding: 1.5rem;
 }
 
 .key-feature__description {
   text-align: center;
   font-weight: bold;
   color: white;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 /* h1 {
