@@ -1,8 +1,34 @@
 #product-overview {
-  background: url("freedom.jpg");
+  /* 아래 옵션들을 한번에 설정 가능 image, position / size repeat background-origin 순 */
+  background: url("freedom.jpg") left 10% bottom 20% / cover no-repeat
+    border-box;
+  /* background-image: url("freedom.jpg");
+  background-size: cover;
+  background-position: left 10% top 20%;
+  background-repeat: no-repeat; */
+
+  /* image를 사용했을때 영역 설정가능 
+    border-box; ▶ 박스 테두리까지 포함하여 적용됨
+    padding-box; ▶ 테두리를 제외한 박스의 안쪽 영역부터 적용됨
+    content-box; ▶ 콘텐츠 부분에만 적용됨 (텍스트의 경우라면 글씨에만 적용)
+    */
+  /* background-origin: border-box; */
+
+  /* image를 사용안했을때 영역 설정가능 origin과 옵션 동일*/
+  /* background-clip: padding-box; */
+
+  /* 배경 이미지의 스크롤 여부
+    scroll : 선택한 요소와 같이 움직입니다. 내용을 스크롤하면 배경 이미지는 스크롤되지 않습니다.
+    fixed : 움직이지 않습니다.
+    local : 선택한 요소와 같이 움직입니다. 내용을 스크롤하면 배경 이미지도 스크롤됩니다.
+    initial : 기본값으로 설정합니다.
+    inherit : 부모 요소의 속성값을 상속받습니다.
+  */
+  background-attachment: scroll;
   width: 100%;
   height: 528px;
   padding: 10px;
+  /* border: 5px dashed red; */
 }
 
 .section-title {
