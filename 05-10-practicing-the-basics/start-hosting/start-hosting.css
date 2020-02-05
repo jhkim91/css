@@ -1,0 +1,36 @@
+/* Advanced Attribute Selectors
+ - Element with Attribute (전체)
+    [type] { color: red } => <input type="text">
+ - Element with Specific Attribute Value (특정속성 '=' )
+    [type="email"] { color: red } => <input type="email">
+  - Element with Specific Attribute Value in List (여러속성 '~=' )
+    [lang~="en-us"] { color: red } => <p lang="en-us en-gb">Hi!</p>
+  - Element with Specific Attribute Value/Value- ( 속성 앞글자 지정 '|=' )
+    [lang |= "en"] { color: red; } => <p lang="en-us">Hi!</p> (en-us 에서 'en' 일치)
+  - Element with Specific Attribute Value Prefix (특정 속성 값 접두사 #등 '^=')
+    [href^="#"] { color: red; } => <a href="#all">Link</a> ('#' 이 해당됨)
+  - Element with Specific Attribute Value Suffix (특정 속성 값 접미사 '$=' 뒷글자만 봄)
+    [href$=".de"] { color: red; } => <a href="ab.de">Link</a> (ab.de 에서 '.de' 가 해당됨)
+  - Element with At Least One Attribute Value (속성값이 하나 이상인 요소 타겟팅 '*=')
+    [src*="cdn"] { color: red; } => <img src=i.cdn.com"> (src=i.cdn.com 에서 'cdn' 이 해당 속성안 어디에있어도 가능)
+  - Check Values Case-Insensitively (속성값의 대소문자를 안가림 'i', 없을시 대소문자를 가린다)
+    [src*="cdn" i] { color: red; } => <img src="i.CDN.com"> (위와 동일 타겟이지만 CDN이 대문자지만 i를 붙여 가능)
+*/
+
+main {
+  padding-top: 1rem;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #ff5454;
+}
+
+.signup-form label,
+.signup-form input,
+.signup-form select {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
