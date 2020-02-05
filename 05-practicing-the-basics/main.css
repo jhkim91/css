@@ -3,9 +3,11 @@
   /* background: url("images/freedom.jpg") #ff1b68 left 10% bottom 20% / cover no-repeat border-box; */
 
   /* 이미지 겉에 색감 씌울 수 있다 */
-  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+  /* background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
     url("images/freedom.jpg") left 10% bottom 70% / cover no-repeat border-box,
-    #ff1b68;
+    #ff1b68; */
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("images/freedom.jpg") center / cover no-repeat border-box, #ff1b68;
 
   /* background-image: url("images/freedom.jpg");
   background-size: cover;
@@ -47,7 +49,6 @@
   /* background-image: radial-gradient( ellipse farthest-corner at 20% 50%, red, blue 70%, green ); */
   width: 100vw;
   height: 33vh;
-  margin-top: 2.75rem;
   /* border: 5px dashed red; */
   position: relative;
 }
@@ -61,12 +62,17 @@
   font-size: 1.6rem;
 }
 
-/* @media: 반응형웹 사이즈 조절 min-width <= */
-@media (min-width: 40rem) {
+/* @media: 반응형웹 사이즈 조절 min-width <=, max-width >=
+ * @media (min-width: 40rem) and (min-height: 60rem) {}: 여러 조건을 동시에 할경우 
+ * orientation: landscape 가로방향일때, portrait 세로방향일때
+ * ,는 or효과 @media (min-width: 40rem), (orientation: landscape) {}: 40rem 이상 또는 디바이스가 가로모드 둘중 하나면 적용
+ */
+@media (min-width: 40rem) and (min-height: 40rem) {
   #product-overview {
     height: 40vh;
     background-position: 50% 25%;
   }
+
   #product-overview h1 {
     font-size: 3rem;
   }
@@ -77,27 +83,18 @@
   text-align: center;
 }
 
-.plan__list {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-}
-
 .plan {
   background: #d5ffdc;
   text-align: center;
-  /* rem: root 사이즈기준, em 을 사용안하는이유는 브라우저 설정에서 글꼴크기를 변경시 영향을 받기 때문(예: em지정 후 크롬에서 command + , 을 누르고 글골ㄱ크기 변경시 변경됨) */
+  /* rem: root 사이즈기준, em 을 사용안하는이유는 브라우저 설정에서 글꼴크기를 변경시 영향을 받기 때문(예: em지정 후 크롬에서 command + , 을 누르고 글꼴크기 변경시 변경됨) */
   padding: 1rem;
-  margin: 0.5rem;
-  display: inline-block;
-  width: 30%;
-  vertical-align: middle;
+  margin: 0.5rem 0;
+  width: 100%;
 }
 
 .plan--highlighted {
   background: #19b84c;
   color: white;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .plan__annotation {
@@ -134,6 +131,25 @@
   margin: 0.5rem 0;
 }
 
+@media (min-width: 40rem) {
+  .plan__list {
+    width: 100%;
+    text-align: center;
+  }
+
+  .plan {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+    min-width: 13rem;
+    max-width: 25rem;
+  }
+
+  .plan--highlighted {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
 #key-features {
   background: #ff1b68;
   margin-top: 5rem;
@@ -152,17 +168,6 @@
   text-align: center;
 }
 
-.key-feature {
-  /* display 속성
-  * inline: 내용만큼의 공간할당됨(여러개사용시 붙음, text로 인식되는거같음)
-  * block: 내용만큼의 공간할당됨(여러개사용시 줄바꿈됨)
-  * inline-block: float 속성을 적용한것처럼 옆으로 늘어져 나옴
-  */
-  display: inline-block;
-  width: 30%;
-  vertical-align: top;
-}
-
 .key-feature__image {
   background: #ffcede;
   width: 128px;
@@ -178,6 +183,20 @@
   font-weight: bold;
   color: white;
   font-size: 1.2rem;
+}
+
+@media (min-width: 40rem) {
+  .key-feature {
+    /* display 속성
+     * inline: 내용만큼의 공간할당됨(여러개사용시 붙음, text로 인식되는거같음)
+     * block: 내용만큼의 공간할당됨(여러개사용시 줄바꿈됨)
+     * inline-block: float 속성을 적용한것처럼 옆으로 늘어져 나옴
+     */
+    display: inline-block;
+    width: 30%;
+    max-width: 25rem;
+    vertical-align: top;
+  }
 }
 
 /* h1 {
