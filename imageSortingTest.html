@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 40px;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-gap: 1px;
+        background-color: #fff;
+        color: #eee;
+      }
+
+      .box {
+        background-color: #eee;
+        color: #fff;
+        border-radius: 5px;
+        padding-top: 50%;
+        font-size: 150%;
+      }
+    </style>
+    <div class="wrapper">
+      <div class="box a">A</div>
+      <div class="box b">B</div>
+      <div class="box c">C</div>
+      <div class="box d">D</div>
+      <div class="box e">E</div>
+      <div class="box f" style="filter: brightness(90%); color: #fff">F</div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+아이템 갯수에따라 3. 6개칸만 보여주고 개수가 부족할경우 회색으로 표시
+
+css
+photoList: {
+backgroundColor: '#444',
+color: '#fff',
+borderRadius: '5px',
+paddingTop: '100%',
+fontSize: '150%',
+backgroundSize: 'cover',
+backgroundRepeat: 'no-repeat'
+}
+photoGrid function
+const photoGrid = photos => {
+if (photos !== null || photos !== undefined) {
+const photoLeng = photos.length <= 3 ? 3 : 6; return ( <Fragment>
+  <div style={{
+              display: 'grid',
+              gridTemplateColumns: '33% 33% 33%',
+              gridGap: '5px',
+              backgroundColor: '#fff',
+              color: '#444'
+            }}>
+    {Array.apply(0, Array(photoLeng)).map((dummy, idx) => (
+    <>
+      {photos[idx] != null ? (
+      <div className={classes.photoList} style={{
+                      backgroundImage: `URL(
+                  'https://maps.googleapis.com/maps/api/place/photo?maxwidth=190&maxheight=190&photoreference=${photos[idx].photo_reference}&key=${GOOGLE_MAP_API_KEY}'
+                )`
+                    }} />
+      ) : (
+      <div className={classes.photoList} />
+      )}
+    </>
+    ))}
+  </div>
+  <Button variant="contained" className={classes.button} startIcon={<AddAPhotoIcon />}
+  >
+  <Typography variant="body2"> 사진등록하기 </Typography>
+  </Button>
+  </Fragment>
+  );
+  }
+  }; -->
