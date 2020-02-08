@@ -1,3 +1,17 @@
+/* 파일 저장으로 가져오기 (기본 ttf가 범용성이 좋음, woff 확장자는 압축한건데 woff는 ie에서 부분지원되고 woff2는 ie에서 지원을안함 그래서 ttf사용중(용량이커질수있는 단점이있다)
+  필요한 글꼴은 모두 넣어야하며, 폰트 굵기가 동일할경우 아래 작성한 한개만인식한다. 
+  url 실제 파일명은 대문자지만, 익스플로러 문제가 발생할수 있어 소문자로 변경한다. */
+@font-face {
+  font-family: "AnonymousPro";
+  /* format("truetype"): 사용할수있는 언어 */
+  src: url(./anonymousPro-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src: url(./anonymousPro-Regular-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
 main {
   padding-top: 2rem;
 }
@@ -58,9 +72,29 @@ main {
 .package__info {
   padding: 1rem;
   border: 1px solid #0e4f1f;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   color: #0e4f1f;
   background: white;
+  /* shared 에 추가한 font (@import) 예시  */
+  /* font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic; */
+  /* font-family: "AnonymousPro", sans-serif; */
+  /* font-weight: 700; */
+
+  /* 시스템폰트에 접근 */
+  /* font: menu; */
+
+  /* 위의 속성을 한줄로 가능 */
+  /* font-style font-variant font-weight font-size/line-height font-family */
+  /* font: italic small-caps 700 1.2rem/2 "AnonymousPro", sans-serif; */
+  /* font: 700 1.2rem "AnonymousPro", sans-serif; */
+
+  /* 문단 줄(overline, underline, line-through / dotted, wavy / red, blue */
+  /* text-decoration: underline wavy red; */
+
+  /* 그림자효과 x, y 축, blur, color 순서 */
+  /* text-shadow: 0 0 10px red; */
 }
 
 .clearfix {

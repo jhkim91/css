@@ -63,6 +63,23 @@ main {
 
 .testimonial__text {
   margin: 0.2rem;
+  /* 아래두개는 사양을 잡아먹음 */
+  /* font-variant: small-caps; */
+  /* font-stretch: ultra-condensed; */
+
+  /* 사양을 안먹는 글꼴 스타일 */
+  /* 글자간격 */
+  /* letter-spacing: 5px; */
+  /* 스페이스간격
+    normal: 사이트 폭에비해 글자가 길경우 스페이스기준으로 앤터
+    nowrap: 사이트 폭 무시 한줄로 나열
+    pre: html 입력값 그대로 출력 (<pre> 태그와 동일)
+    pre-wrap: 입력한대로 출력하지만 사이트폭이 좁아지면 자동 줄바꿈
+    pre-line: 사이트 폭에 따라 각줄별로 최대한 많은 문자를 넣음
+  */
+  /* white-space: pre-line; */
+  /* 글자 높이: 1rem 기준 font-size:1.2rem 으로 설정되있어도 1rem기준으로 계산함 */
+  /* line-height: 2; */
 }
 
 @media (min-width: 40rem) {
