@@ -1,19 +1,90 @@
 .container {
   margin: 20px;
+  height: 500px;
+  display: grid;
+  /* grid column 개수, 크기 지정 
+    1fr: 남은 여백 가져감
+    auto: 필요한 컨텐츠 높이만큼 지정
+  */
+  /* grid-template-columns: 200px 5rem 20% auto; 
+    repeat(4, 1fr): 4개 컬럼을 1/n 씩 만듦
+  */
+  /* 명칭지정 방법1 */
+  /* grid-template-columns: repeat(4, [col-start] 1fr [col-end]); */
+
+  /* 명칭지정 방법2 */
+  grid-template-columns: [hd-start]repeat(4, [col-start] 1fr [col-end]) [hd-end];
+
+  /* grid row 개수, 크기 지정
+    minmax() : 최소높이, 최대높이 하나의 컬럼값 / minmax(10px, auto) 등 가능
+    [] : 이름 지정, 예약어인 span 을 제외하고 가능, 띄어쓰기로 여러개 선언
+  */
+  grid-template-rows:
+    /* 명칭지정 방법1 */
+    /* [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, auto) */
+    /* 명칭지정방법2 */
+    [hd-start] 5rem [hd-end row-2-start] minmax(10px, auto)
+    [row-2-end row-3-start] 100px [row-3-end];
+
+  /* grid-template columns, rows 위치 이름 지정, 이름 지정안할경우 . 으로 표시 */
+  grid-template-areas:
+    "header header header header"
+    ". . main main"
+    "footer footer footer footer";
+
+  /* 그리드 간격 */
+  /* grid-column-gap: 20px;
+  grid-row-gap: 10px; */
+  /* 1개일떄 모두 동일, 2개일떄 10px 50px 세로 가로 순 */
+  grid-gap: 10px;
 }
 
 .el1 {
   background: rgba(255, 154, 72, 0.5);
+  /* repeat으로 지정할경우 동일이름으로 이름을 짓게되므로 동일이름의 몇번째인지 지정 */
+  grid-column: col-start 2 / col-end 2;
 }
 
 .el2 {
   background: rgba(255, 0, 0, 0.5);
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+  /* 위 2개를 하나로 사용 */
+  /* grid-column: 1 / -1; */
+
+  /* grid-row-start: 2; */
+  /* grid-row-start: row-2-start;
+  grid-row-end: span 1; */
+  /* grid-row: row-2-start / span 1; */
+
+  grid-area: main;
+  z-index: 10;
 }
 
 .el3 {
   background: rgba(0, 128, 0, 0.5);
+  /* grid 위치 지정 3*3 테이블 기준 가로세로 1,2,3,4 로 감싸짐 */
+  /* grid-column-start: 2; */
+  /* span: 3칸 적용하고 끝
+   * -값: 끝에서부터 지정 -1 = 마지막칸, -2는 그옆칸 ...
+   * grid-column-end: 5; 
+   */
+  /* grid-column-end: span 3;
+  grid-row-start: row-1-start;
+  grid-row-end: row-2-end; */
+
+  /* 포지션 한줄 정리 순서: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
+  /* grid-area: row-1-start / 2 / row-2-end / span 3; */
+
+  /* 명칭지정 방법1*/
+  /* grid-area: header; */
+
+  /* 명칭지정 방법2
+    명칭 뒤에 -start -end 패턴을 쓰면 제거 가능 */
+  grid-area: hd;
 }
 
 .el4 {
   background: rgba(0, 4, 255, 0.5);
+  grid-area: footer;
 }
