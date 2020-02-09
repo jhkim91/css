@@ -34,7 +34,7 @@ body {
     wrap: 화면이 줄어들경우 마지막 박스가 아래로 내려감
     wrap-reverse: 화면이 줄어들경우 마지막 박스가 위로 올라감
   */
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   /* flex-direction flex-wrap 내용을 아래내용으로 쓸수있지만 직관성을 위헤 위의 방식사용 */
   /* flex-flow: row wrap; */
@@ -53,7 +53,7 @@ body {
     center: [row: 가운데, column: 가운데]
     flex-end: [row: 우측, column: 하단]
    */
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   /* 웹크기가 작아지면서 여러줄 될경우 배치 방법(align-items 해당태그 높이안맞춰줌)
     flex-start: 위에 정렬
@@ -61,7 +61,7 @@ body {
     flex-end: 아래로 정렬
     space-between: 위아래
    */
-  align-content: space-between;
+  /* align-content: space-between; */
 }
 
 .item-1 {
@@ -89,6 +89,8 @@ body {
   border: 5px solid black;
   margin: 10px;
   height: 250px;
+  /* 부모가 display: flex 여야 가능, 단일 요소의 위치를 정의 할 수있음 */
+  /* align-self: flex-start; */
 }
 
 .item-4 {
@@ -99,6 +101,11 @@ body {
   margin: 10px;
   width: 300px;
   height: 300px;
+
+  /* 부모가 display: flex 이어야 가능
+    기본 0 이기때문에 앞으로 보내고싶으면 -1 뒤로보내고싶으면 1이상을잡으면된다
+  */
+  /* order: -1; */
 }
 
 .item-5 {
@@ -108,6 +115,16 @@ body {
   border: 5px solid black;
   margin: 10px;
   width: 350px;
+  /* flex-grow: 남은 여백에 비례해서 크기 증가(0은 기본 크기에서 멈춤) 
+     flex-wrap: nowrap 으로 줄었을때 앤터가 되지않도록 하고함(내려갈경우 width를 100차지하기떄문)
+  */
+  /* flex-grow: 1; */
+
+  /* flex-shrink: 지정한 width 보다 작아질때 어느정도 비율로 줄일지 각각 지정 */
+  /* flex-shrink: 1; */
+
+  /* flex-basis: 축기준(flex-direction)의 길이 변경 [row: width, column: height]*/
+  /* flex-basis: 400px; */
 }
 
 .item-6 {
@@ -117,4 +134,5 @@ body {
   border: 5px solid black;
   margin: 10px;
   width: 350px;
+  /* flex-shrink: 1.2; */
 }
