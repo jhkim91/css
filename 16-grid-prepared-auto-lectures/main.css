@@ -1,0 +1,37 @@
+.container {
+  margin: 20px;
+  display: grid;
+  /* 고정 지정 */
+  grid-template-columns: repeat(3, 10rem);
+  /* 유연하게 지정할경우 사이즈별로 박스 이동
+    auto-fill: 창 사이즈에 비례해서 박스를 많이넣게함, 박스보다 창 사이즈가 클경우 좌측정렬
+    auto-fit: 창 사이즈에 비례해서 박스를 많이넣게함, 박스보다 창 사이즈가 클경우 가운데정렬
+  */
+  /* grid-template-columns: repeat(auto-fill, 10rem); */
+  grid-template-rows: 20rem;
+  justify-content: center;
+  grid-gap: 1.5rem;
+  /* 여러 row 생성시 높이 지정 */
+  /* grid-auto-rows: minmax(8rem, auto); */
+  /* dense: 빈공간을 알아서 채워줌(아래 span 2로 공간이 비게되었는데 그부분을 자동으로 채워줌) */
+  grid-auto-flow: row dense;
+  grid-auto-columns: 5rem;
+}
+
+.quote:nth-of-type(2) {
+  grid-column: span 2;
+}
+
+.quote {
+  border: 1px solid #fa923f;
+  background: #ffbd87;
+  font-family: sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.quote--featured {
+  border: #ff4213;
+  background: #ff9f87;
+  grid-column: span 2;
+}
