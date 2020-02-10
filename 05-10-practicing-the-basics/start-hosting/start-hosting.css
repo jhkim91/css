@@ -29,6 +29,9 @@ main {
 
 .signup-form {
   padding: 1rem;
+  display: grid;
+  grid-auto-rows: 2rem;
+  grid-row-gap: 0.5rem;
 }
 
 .signup-form label {
@@ -39,7 +42,6 @@ main {
 .signup-form input,
 .signup-form select {
   display: block;
-  margin-top: 1rem;
   width: 100%;
 }
 
@@ -96,12 +98,24 @@ html input 태그에 required 를 해주면 처음부터 적용됨
 
 .signup-form button[type="submit"] {
   display: block;
-  margin-top: 1rem;
 }
 
 @media (min-width: 40rem) {
   .signup-form {
     margin: auto;
-    width: 25rem;
+    width: 30rem;
+    grid-template-columns: 10rem auto;
+    grid-row-gap: 1rem;
+    grid-column-gap: 0.5rem;
+  }
+
+  .signup-form [id="title"] {
+    /* grid-row: 2 / 3 끝지점 정해줘야하지만 기본 1개 이므로 생략가능(2번째 column값을 row로 바꿈으로써 위치변경) */
+    /* grid-row: 2; */
+    /* 한줄 다 차지 */
+    grid-column: span 2;
+  }
+  .signup-form__checkbox {
+    grid-column: span 2;
   }
 }
