@@ -1,12 +1,41 @@
 .container {
-    margin: 150px auto;
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
+  position: relative;
+  margin: 150px auto;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  /* 원근법 transform에 같이 써도되지만 부모에 적용하는것이 좋음*/
+  perspective: 1000px;
+  /* 원근법 기준으로 바라보는 위치 */
+  perspective-origin: 500px;
+  transform: rotateY(130deg);
+  /* 기본값이 flat으로 지정되있음(움직일때 요소가 같이 이동) */
+  transform-style: preserve-3d;
 }
 
-.box {
-    background: red;
-    width: 100%;
-    height: 100%;
+.box1 {
+  position: absolute;
+  background: red;
+  width: 100%;
+  height: 100%;
+  /* rotate 3d 회전 rotateX, Y: 축회전 180도하면 반대 90도하면안보임 */
+  /* transform: rotateX(30deg) rotateY(80deg) rotateZ(30deg); */
+  transform: rotateY(80deg);
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  z-index: 1;
+  backface-visibility: visible;
+}
+
+.box2 {
+  position: absolute;
+  background: blue;
+  width: 100%;
+  height: 100%;
+  height: 100%;
+  transform: translateX(1rem) translateZ(-10rem);
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
 }
