@@ -214,7 +214,11 @@
 
 .modal {
   position: fixed;
-  display: none;
+  /* opacity: 투명도 */
+  opacity: 0;
+  transform: translateY(-3rem);
+  /* 1개일경우 하나로, 2개이상일경우 ','로 구분 */
+  transition: opacity 0.2s ease-out 1s, transform 500ms ease-out 1s;
   z-index: 200;
   top: 20%;
   left: 30%;

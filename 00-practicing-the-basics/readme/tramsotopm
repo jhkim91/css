@@ -1,0 +1,24 @@
+CSS "전환"속성 딥 다이브
+이 transition  속성은 이전 비디오에서와 같이 사용됩니다.
+
+transition: WHAT DURATION DELAY TIMING-FUNCTION; 
+
+예:
+
+transition: opacity 200ms 1s ease-out; 
+
+"애니메이션의 변경 :로 번역 할 수 있습니다 opacity  합니다 (되는 요소의 특성 transition  의 기간 동안 속성이 적용된다) 이 200ms .  빠른 시작 느린 종료 해야합니다 또한, 시작하기 전에 1 초를 기다립니다 ."
+
+이 속기 대신 네 가지 개별 속성을 지정할 수도 있습니다.
+
+1)  transition-property  ( https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property => transition-property: opacity; 
+
+2)  transition-duration  ( https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration ) => transition-duration: 200ms; 
+
+3)  transition-timing-function  ( https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function ) => transition-timing-function: ease-out; 
+
+가능한 타이밍 함수 값은 다음과 같습니다 :  ease-out , ease-in , linear , cubic-bezier()  다른 사람과 부부. 자세한 내용은 위의 링크 와 다음 강의 를 참조하십시오.
+
+4)  transition-delay  ( https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay ) => transition-delay: 1s; 
+
+CSS 전환에 대한 공식 MDN 기사는 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions 에서 읽을 수 있습니다. 
