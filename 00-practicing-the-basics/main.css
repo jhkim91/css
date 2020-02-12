@@ -217,8 +217,12 @@
   /* opacity: 투명도 */
   opacity: 0;
   transform: translateY(-3rem);
-  /* 1개일경우 하나로, 2개이상일경우 ','로 구분 */
-  transition: opacity 0.2s ease-out 1s, transform 500ms ease-out 1s;
+  /* 1개일경우 하나로, 2개이상일경우 ','로 구분
+    옵션은 원하는동작, 걸리는시간, 빠른시작 느린종료 등 선택, 시작하기전 대기시간 */
+  /* transition: opacity 0.2s ease-out 1s, transform 500ms ease-out 1s; */
+  /* 이동속도 지정 하기위해 다음 사이트를 참고 https://easings.net/ , 개발자모드에서 속도 수정가능*/
+  transition: opacity 0.2s,
+    transform 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
   z-index: 200;
   top: 20%;
   left: 30%;
