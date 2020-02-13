@@ -1,0 +1,67 @@
+CSS "애니메이션"속성 딥 다이브
+이  animation  속성은 이전 비디오에서와 같이 사용됩니다.
+
+animation: NAME DURATION DELAY TIMING-FUNCTION ITERATION DIRECTION FILL-MODE PLAY-STATE; 
+
+예:
+
+animation: wiggle 200ms 1s ease-out 8 alternate forwards running; 
+
+"의 기간 동안 호기심 키 프레임 세트 (애니메이션) 재생 :로 번역 할 수있는  200 밀리 초를 두 키 프레임 사이. 의 빠른 타트와 느린 종료 해야합니다 또한,  시작하기 전에 1 초를 기다립니다.  플레이 8 애니메이션 및 대체를 각 애니메이션 후 한 번. 당신이 완료 최종 값 유지 . 오 요소에 적용을, 당신은해야한다 애니메이션 재생 - 일시 중지하지 . "
+
+이 속기 대신 개별 속성을 지정할 수도 있습니다.
+
+1)  animation-name  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name  => animation-name: wiggle; 
+
+2)  animation-duration  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration ) => animation-duration: 200ms; 
+
+3)  animation-timing-function  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function ) => animation-timing-function: ease-out; 
+
+가능한 타이밍 함수 값은 다음과 같습니다 :  ease-out ,  ease-in ,  linear ,  cubic-bezier()  다른 사람과 부부. 자세한 내용은 위의 링크를 참조하십시오.
+
+4)  animation-delay  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay ) => animation-delay: 1s; 
+
+5) animation-iteration-count  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count ) => animation-iteration-count: 8; 
+
+6)  animation-direction  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction ) => animation-direction: alternate; 
+
+7)  animation-fill-mode  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode ) => animation-fill-mode: forwards; 
+
+8)  animation-play-state  ( https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state ) => animation-play-state: running; 
+
+CSS 애니메이션에 대한 공식 MDN 기사는 여기 ( https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) 에서 읽을 수 있습니다. 
+
+================================================================================================================================================
+
+CSS "animation" Property Deep Dive
+The animation  property is used as see in the previous video:
+
+animation: NAME DURATION DELAY TIMING-FUNCTION ITERATION DIRECTION FILL-MODE PLAY-STATE; 
+
+Example:
+
+animation: wiggle 200ms 1s ease-out 8 alternate forwards running; 
+
+Can be translated to: "Play the wiggle keyframe set (animation) over a duration of 200ms. Between two keyframes start fast and end slow, also make sure to wait 1s before you start. Play 8 animations and alternate after each animation. Once you're done, keep the final value applied to the element. Oh, and you should be playing the animation - not pausing."
+
+Instead of this shorthand, you can also specify the individual properties:
+
+1) animation-name  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name => animation-name: wiggle; 
+
+2) animation-duration  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration) => animation-duration: 200ms; 
+
+3) animation-timing-function  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) => animation-timing-function: ease-out; 
+
+Possible timing function values are: ease-out , ease-in , linear , cubic-bezier()  and a couple of others. See the above link for more details.
+
+4) animation-delay  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay) => animation-delay: 1s; 
+
+5) animation-iteration-count  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count) => animation-iteration-count: 8; 
+
+6) animation-direction  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction) => animation-direction: alternate; 
+
+7) animation-fill-mode  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode) => animation-fill-mode: forwards; 
+
+8) animation-play-state  (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state) => animation-play-state: running; 
+
+You can read the official MDN article on CSS animations here: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations

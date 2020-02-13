@@ -34,14 +34,16 @@ main {
 }
 
 .backdrop {
-  position: fixed;
   display: none;
+  position: fixed;
+  opacity: 0;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s linear;
 }
 
 .main-header {
@@ -117,6 +119,17 @@ main {
 .main-nav__item a:active {
   color: white;
   border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta {
+  /* @keyframes, 동작시간, 지연시간, 반복, 움직임옵션
+    움직임옵션
+      alternate: 동작후처음으로 다시 동작
+      reverse: 동작이 끝나면 처음부터
+      forwards: 동작이 끝나면 keyframes to 상태 유지
+      backwards: 시작지점을 keyframes from 으로 잡고 끝나면 원래 모양대로
+   */
+  animation: wiggle 200ms 1s 8 alternate;
 }
 
 .main-nav__item--cta a,
@@ -252,5 +265,14 @@ main {
   .main-footer__links {
     flex-direction: row;
     justify-content: center;
+  }
+}
+
+@keyframes wiggle {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(10deg);
   }
 }
