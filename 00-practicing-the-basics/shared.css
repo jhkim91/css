@@ -3,6 +3,11 @@
 @import url("https://fonts.googleapis.com/css?family=Anton");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
+:root {
+  --dark-green: #0e4f1f;
+  --highlight-color: #ff1b68;
+}
+
 * {
   /* box-sizing
    * 기본 centent-box 옵션으로 되어있는데 border-width:10px 등 값을 지정하게되면 컨텐츠 크기를 기준으로하기때문에 박스가 생각했던 크기보다 커지게된다
@@ -82,7 +87,10 @@ main {
 }
 
 .main-header__brand {
-  color: #0e4f1f;
+  /* css 변수사용 (:root에서 선언했고, 익스 지원안되고있음)
+    아래방법대로 사용하면되고 지원안할경우 옆에서 사용할 수 있는 값 설정
+    color: var(--dark-green, #0e4f1f); */
+  color: var(--dark-green);
   text-decoration: none;
   font-weight: bold;
 }
@@ -110,7 +118,7 @@ main {
 .main-nav__item a,
 .mobile-nav__item a {
   text-decoration: none;
-  color: #0e4f1f;
+  color: var(--dark-green);
   font-weight: bold;
   padding: 0.2rem 0;
 }
@@ -138,7 +146,7 @@ main {
 .main-nav__item--cta a,
 .mobile-nav__item--cta a {
   color: white;
-  background: #ff1b68;
+  background: var(--highlight-color);
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
@@ -147,7 +155,7 @@ main {
 .main-nav__item--cta a:active,
 .mobile-nav__item--cta a:hover,
 .mobile-nav__item--cta a:active {
-  color: #ff1b68;
+  color: var(--highlight-color);
   background: white;
   border: none;
 }
@@ -226,7 +234,7 @@ main {
 }
 
 .button {
-  background: #0e4f1f;
+  background: var(--dark-green);
   color: white;
   font: inherit;
   border: 1.5px solid #0e4f1f;
@@ -239,7 +247,7 @@ main {
 .button:hover,
 .button:active {
   background: white;
-  color: #0e4f1f;
+  color: var(--dark-green);
 }
 
 .button:focus {
